@@ -1,0 +1,67 @@
+// 추가적인 커스터마이징// WP Color system
+
+// scss-docs-start gray-color-variables
+$white: #fff !default;
+$gray-100: #ECEEF3 !default;
+$gray-200: #D8DEE9 !default;
+$gray-300: #BEC7DA !default;
+$gray-400: #899BBD !default;
+$gray-500: #4A5D82 !default;
+$gray-600: #3B4A68 !default;
+$gray-700: #2D3B58 !default;
+$gray-800: #272F3F !default;
+$gray-900: #1F2228 !default;
+$black: #131416 !default;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start color-variables
+$blue: #0476CD !default;
+$indigo: #6610f2 !default;	/*  */
+$purple: #CC00F5 !default;
+$pink: #D90099 !default;
+$red: #DF134C !default;
+$orange: #F24216 !default;
+$yellow: #E5A012 !default;
+$green: #15AD36 !default;
+$teal: #20c997 !default;	/*  */
+$cyan: #08AACC !default;
+// scss-docs-end color-variables
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: "Noto Sans KR", sans-serif !default;
+$font-family-en: "Roboto", sans-serif !default;
+
+$heading-font-family: "Noto Sans KR", sans-serif; // 사용할 폰트 설정
+$heading-font-weight: 700; // 기본 글꼴 두께 설정
+
+//
+$border-color:                $gray-200 !default;
+
+//button
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           .25rem !default;
+$btn-border-radius-sm:        .125rem !default;
+
+$border-radius:               .25rem !default;
+$border-radius-sm:            .125rem !default;
+
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2.5,
+  6: $spacer * 3,
+) !default;
+// scss-docs-end spacer-variables-maps
+
+//modal
+$modal-xxl:                          1600px !default;
+
+// Bootstrap의 기본 스타일을 가져옵니다.
+@import "../node_modules/bootstrap/scss/bootstrap";
