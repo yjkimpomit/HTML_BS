@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 뷰포트 크기 알려줌 */
+#viewport-info {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+
+	padding: 1rem;
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: rgba(255, 255, 255, .5);
+	border: solid 1px var(--bs-border-color);
+}
