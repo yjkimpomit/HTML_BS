@@ -43,11 +43,14 @@ function updateViewportInfo() {
 	const infoDiv = document.getElementById("viewport-info");
 
 	// 기기 명칭과 뷰포트 크기 함께 표시
-	infoDiv.innerHTML = `
-		Device: ${deviceInfo}<br>
-		Viewport width: ${viewportSize.width}px<br>
-		Viewport height: ${viewportSize.height}px
-	`;
+	if( $("#viewport-info").length ) {
+
+		infoDiv.innerHTML = `
+			Device: ${deviceInfo}<br>
+			Viewport width: ${viewportSize.width}px<br>
+			Viewport height: ${viewportSize.height}px
+		`;
+	}
 }
 
 // 페이지 로드 시 초기 크기 및 기기 정보 표시

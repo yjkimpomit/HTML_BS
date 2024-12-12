@@ -3,16 +3,13 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-
-	"scripts": {
-		
-	},
-
-  "keywords": [],
+	"scripts": {},
+	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"bootstrap": "^5.3.3",
-		"sass": "^1.79.4"
+		"sass": "^1.79.4",
+		"swiper": "^11.1.15"
 	}
 }
