@@ -1,89 +1,159 @@
 @use "sass:color"; // 색상 모듈 사용
+// 추가적인 커스터마이징// WP Color system
 
+$primary: #0082E6;
 // 색상 변수 정의
-$primary: #0076D1;
-
 $colors: (
 	"blue": $primary,
-	"indigo": #5652f0,
+	"indigo": #3834C9,
 	"purple": #952CF2,
-	"pink": #F748AD,
+	"pink": #FF42B4,
 	"red": #DF134C,
 	"orange": #fd7e14,
 	"yellow": #ffc107,
 	"green": #00A662,
-	"teal": #0099CC,
-	"cyan": #00BBE0,
+	"teal": #00b2bd,
+	"cyan": #00b2da,
 	"gray": #6E7687
 );
 
 // 색상별 명도 단계 정의 (각각의 색상에 맞춰 다른 비율 적용)
 $lightness-steps: (
-	"blue": (100: (lightness: 48%, saturation: 0%),
-		200: (lightness: 40%, saturation: 0%),
-		300: (lightness: 30%, saturation: 0%),
-		400: (lightness: 16%, saturation: 0%),
-		500: (lightness: 0%, saturation: 0%),
-		600: (lightness: -8%, saturation: 0%),
-		700: (lightness: -18%, saturation: 0%),
-		800: (lightness: -28%, saturation: 0%),
-		900: (lightness: -38%, saturation: 0%)),
-	"indigo": (100: (lightness: 30%, saturation: 0%),
-		200: (lightness: 24%, saturation: 0%),
-		300: (lightness: 16%, saturation: 0%),
-		400: (lightness: 10%, saturation: 0%),
-		500: (lightness: 0%, saturation: 0%),
-		600: (lightness: -8%, saturation: -5%),
-		700: (lightness: -16%, saturation: -10%),
-		800: (lightness: -24%, saturation: -15%),
-		900: (lightness: -32%, saturation: -20%)),
-	"purple": (100: (lightness: 38%, saturation: 0%),
-		200: (lightness: 32%, saturation: 0%),
-		300: (lightness: 24%, saturation: 0%),
-		400: (lightness: 16%, saturation: 0%),
-		500: (lightness: 0%, saturation: 0%),
-		600: (lightness: -8%, saturation: -5%),
-		700: (lightness: -16%, saturation: -10%),
-		800: (lightness: -24%, saturation: -15%),
-		900: (lightness: -32%, saturation: -20%)),
-	"pink": (100: (lightness: 38%, saturation: 0%),
-		200: (lightness: 32%, saturation: 0%),
-		300: (lightness: 24%, saturation: 0%),
-		400: (lightness: 16%, saturation: 0%),
-		500: (lightness: 0%, saturation: 0%),
-		600: (lightness: -8%, saturation: -5%),
-		700: (lightness: -16%, saturation: -10%),
-		800: (lightness: -24%, saturation: -15%),
-		900: (lightness: -32%, saturation: -20%)),
-	"red": (100: (lightness: 45%, saturation: 0%),
-		200: (lightness: 40%, saturation: 0%),
-		300: (lightness: 30%, saturation: 0%),
-		400: (lightness: 20%, saturation: 0%),
-		500: (lightness: 10%, saturation: 0%),
-		600: (lightness: 0%, saturation: 0%),
-		700: (lightness: -10%, saturation: 0%),
-		800: (lightness: -20%, saturation: 0%),
-		900: (lightness: -30%, saturation: 0%))
+	"blue": (
+		100: 48%,
+		200: 36%,
+		300: 24%,
+		400: 12%,
+		500: 0%,
+		600: -10%,
+		700: -18%,
+		800: -26%,
+		900: -36%
+	),
+	"indigo": (
+		100: 40%,
+		200: 32%,
+		300: 20%,
+		400: 10%,
+		500: 0%,
+		600: -10%,
+		700: -18%,
+		800: -26%,
+		900: -36%
+	),
+	"purple": (
+		100: 38%,
+		200: 32%,
+		300: 20%,
+		400: 10%,
+		500: 0%,
+		600: -10%,
+		700: -18%,
+		800: -26%,
+		900: -36%
+	),
+	"pink": (
+		100: 30%, // 핑크는 명도 비율을 50%로 설정하여 흰색에 가까운 느낌을 피함
+		200: 26%,
+		300: 18%,
+		400: 12%,
+		500: 0%,
+		600: -14%,
+		700: -24%,
+		800: -40%,
+		900: -50%
+	),
+	"red": (
+		100: 42%,
+		200: 32%,
+		300: 20%,
+		400: 10%,
+		500: 0%,
+		600: -10%,
+		700: -18%,
+		800: -26%,
+		900: -36%
+	),
+	"orange": (
+		100: 38%, // 채도와 대비가 낮은 색상을 어두운 비율로 설정
+		200: 30%,
+		300: 20%,
+		400: 10%,
+		500: 0%,
+		600: -10%,
+		700: -18%,
+		800: -24%,
+		900: -30%
+	),
+	"yellow": (
+		100: 40%, // 노란색은 밝기 비율을 낮추어 대비감을 높임
+		200: 32%,
+		300: 22%,
+		400: 12%,
+		500: 0%,
+		600: -15%,
+		700: -25%,
+		800: -35%,
+		900: -44%
+	),
+	/* "green": (
+		100: 52%,
+		200: 36%,
+		300: 20%,
+		400: 8%,
+		500: 0%,
+		600: -10%,
+		700: -16%,
+		800: -22%,
+		900: -28%
+	), */
+	"teal": (
+		100: 52%,
+		200: 36%,
+		300: 20%,
+		400: 8%,
+		500: 0%,
+		600: -10%,
+		700: -16%,
+		800: -22%,
+		900: -28%
+	),
+	"default": (
+		100: 48%, 
+		200: 42%,
+		300: 30%,
+		400: 12%,
+		500: 0%,
+		600: -12%,
+		700: -16%,
+		800: -24%,
+		900: -32%
+	)
 );
 
-@mixin color-variation($color-name, $lightness-key) {
-	$color: map-get($colors, $color-name);
-	$lightness-map: map-get($lightness-steps, $color-name);
-	$lightness-value: map-get($lightness-map, $lightness-key);
+// 배경 색상 클래스 생성 Mixin
+@mixin bg-color($name, $color, $modifier, $lightness) {
+	// 텍스트 색상 계산: -500부터 -900까지는 흰색, 그 외에는 검은색
+	$text-color: if($modifier >= 500, #fff, #000);
 
-	@if $color and $lightness-value {
-		@if $lightness-value > 0 {
-			// 밝은 색으로 처리
-			$final-color: lighten($color, $lightness-value);
-		} @else {
-			// 어두운 색으로 처리
-			$final-color: darken($color, abs($lightness-value));
-		}
+	.bg-#{$name}-#{$modifier} {
+		background-color: adjust-color($color, $lightness: $lightness) !important;
+		color: $text-color; // 텍스트 색상 설정
+	}
+}
 
-		// 계산된 색상 반환
-		background-color: $final-color;
-	} @else {
-		@warn "명도 단계가 정의되지 않았습니다: #{$color-name} - #{$lightness-key}";
+// 기본 배경 색상 클래스 생성
+@each $name, $color in $colors {
+	// 색상별로 명도 단계 다르게 적용
+	$steps: map-get($lightness-steps, $name);
+	
+	// 해당 색상이 lightness-steps에 정의되어 있지 않으면 default 값 사용
+	@if $steps == null {
+		$steps: map-get($lightness-steps, "default");
+	}
+
+	@each $modifier, $lightness in $steps {
+		@include bg-color($name, $color, $modifier, $lightness);
 	}
 }
 
@@ -102,7 +172,9 @@ $lightness-steps: (
 
 // CSS 변수 작성 Mixin
 @mixin define-rgb-variables($name, $color) {
-	--bs-#{$name}-rgb: #{red($color)}, #{green($color)}, #{blue($color)};
+	--bs-#{$name}-rgb: #{red($color)},
+	#{green($color)},
+	#{blue($color)};
 }
 
 // :root에 CSS 변수 정의
