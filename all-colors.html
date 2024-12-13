@@ -15,7 +15,9 @@
 </head>
 
 <body>
-	<div class="container">
+	<header class="navbar navbar-expand-lg bd-navbar sticky-top"></header>
+	
+	<div class="container-xxl bd-gutter mt-3 my-md-4">
 		<h1 class="my-3">컬러 시스템</h1>
 		<div class="row g-5 font-monospace">
 			<!-- blue -->
@@ -514,58 +516,72 @@
 		</div>
 	</div>
 
+	<!-- auto hexcode value -->
+	<script>
+	/* 
+		document.querySelectorAll("[class*='swatch-']").forEach((swatch) => {
+			// 요소의 배경색 가져오기
+			const backgroundColor = getComputedStyle(swatch).backgroundColor;
 
-<!-- auto hexcode value -->
-<script>
-/* 
-	document.querySelectorAll("[class*='swatch-']").forEach((swatch) => {
-		// 요소의 배경색 가져오기
-		const backgroundColor = getComputedStyle(swatch).backgroundColor;
+			// 배경색을 HEX 형식으로 변환
+			const rgbToHex = (rgb) => {
+				const rgbValues = rgb
+					.match(/\d+/g)
+					.map((value) => parseInt(value, 10).toString(16).padStart(2, '0'));
+				return `#${rgbValues.join('')}`.toUpperCase();
+			};
 
-		// 배경색을 HEX 형식으로 변환
-		const rgbToHex = (rgb) => {
-			const rgbValues = rgb
-				.match(/\d+/g)
-				.map((value) => parseInt(value, 10).toString(16).padStart(2, '0'));
-			return `#${rgbValues.join('')}`.toUpperCase();
-		};
+			const hexColor = rgbToHex(backgroundColor);
 
-		const hexColor = rgbToHex(backgroundColor);
+			// 하위 요소 중 #로 시작하는 텍스트 요소를 찾아 업데이트
+			const colorCodeElement = Array.from(swatch.childNodes).find(
+				(node) =>
+					node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().startsWith('#')
+			);
 
-		// 하위 요소 중 #로 시작하는 텍스트 요소를 찾아 업데이트
-		const colorCodeElement = Array.from(swatch.childNodes).find(
-			(node) =>
-				node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().startsWith('#')
-		);
+			if (colorCodeElement) {
+				colorCodeElement.nodeValue = hexColor;
+			}
+		}); 
+	*/
+		document.querySelectorAll(".row > [class*='col-'] > div").forEach((swatch) => {
+			// 요소의 배경색 가져오기
+			const backgroundColor = getComputedStyle(swatch).backgroundColor;
 
-		if (colorCodeElement) {
-			colorCodeElement.nodeValue = hexColor;
-		}
-	}); 
-*/
-	document.querySelectorAll(".row > [class*='col-'] > div").forEach((swatch) => {
-		// 요소의 배경색 가져오기
-		const backgroundColor = getComputedStyle(swatch).backgroundColor;
+			// 배경색을 HEX 형식으로 변환
+			const rgbToHex = (rgb) => {
+				const rgbValues = rgb
+					.match(/\d+/g)
+					.map((value) => parseInt(value, 10).toString(16).padStart(2, '0'));
+				return `#${rgbValues.join('')}`.toUpperCase(); // 대문자로 변환
+			};
 
-		// 배경색을 HEX 형식으로 변환
-		const rgbToHex = (rgb) => {
-			const rgbValues = rgb
-				.match(/\d+/g)
-				.map((value) => parseInt(value, 10).toString(16).padStart(2, '0'));
-			return `#${rgbValues.join('')}`.toUpperCase(); // 대문자로 변환
-		};
+			const hexColor = rgbToHex(backgroundColor);
 
-		const hexColor = rgbToHex(backgroundColor);
-
-		// .color-code 클래스를 가진 하위 요소에 HEX 색상 대입
-		const colorCodeElement = swatch.querySelector(".color-code");
-		if (colorCodeElement) {
-			colorCodeElement.textContent = hexColor;
-		}
-	});
+			// .color-code 클래스를 가진 하위 요소에 HEX 색상 대입
+			const colorCodeElement = swatch.querySelector(".color-code");
+			if (colorCodeElement) {
+				colorCodeElement.textContent = hexColor;
+			}
+		});
 
 
-</script>
+	</script>
+
+	<script>
+		$.ajax({
+			method: "GET",
+			url:"/common/inc_top.html",
+			dataType:"html",
+			success: function(data){
+				$("header").html(data);
+			},
+			error: function() {
+				console.log("로드 실패");
+			}
+		});
+	</script> 
+
 </body>
 
 </html>

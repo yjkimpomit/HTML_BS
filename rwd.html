@@ -13,36 +13,54 @@
 </head>
 
 <body>
-	<h1>RWD Viewport</h1>
+	<header class="navbar navbar-expand-lg bd-navbar sticky-top"></header>
 
-	<!-- temp -->
-	<div id="viewport-info"></div>
+	<div class="container-xxl bd-gutter mt-3 my-md-4">
+		<h1>RWD Viewport</h1>
 
-	<!-- 갤럭시 8+ 탭 -->
-	<h4>갤럭시 8+ 탭 Device Viewport</h4>
-	<div class="row g-2">
-		<div class="col">
-			<h5>Chrome</h5>
-			<ul>
-				<li>H: 1318W * 657H</li>
-				<li>V: 825W * 1150H</li>
-			</ul>
-		</div>
-		<div class="col">
-			<h5>Google G</h5>
-			<ul>
-				<li>H: 1318W * 689H </li>
-				<li>V: 825W * 1182H</li>
-			</ul>
-		</div>
-		<div class="col">
-			<h5>Galaxy Browser</h5>
-			<ul>
-				<li>H: 1318W * 659H</li>
-				<li>V: 825W * 1152H</li>
-			</ul>
+		<!-- temp -->
+		<div id="viewport-info"></div>
+
+		<!-- 갤럭시 8+ 탭 -->
+		<h4>갤럭시 8+ 탭 Device Viewport</h4>
+		<div class="row g-2">
+			<div class="col">
+				<h5>Chrome</h5>
+				<ul>
+					<li>H: 1318W * 657H</li>
+					<li>V: 825W * 1150H</li>
+				</ul>
+			</div>
+			<div class="col">
+				<h5>Google G</h5>
+				<ul>
+					<li>H: 1318W * 689H </li>
+					<li>V: 825W * 1182H</li>
+				</ul>
+			</div>
+			<div class="col">
+				<h5>Galaxy Browser</h5>
+				<ul>
+					<li>H: 1318W * 659H</li>
+					<li>V: 825W * 1152H</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-	
+
+	<script>
+		$.ajax({
+			method: "GET",
+			url:"/common/inc_top.html",
+			dataType:"html",
+			success: function(data){
+				$("header").html(data);
+			},
+			error: function() {
+				console.log("로드 실패");
+			}
+		});
+	</script>
+
 </body>
 </html>
