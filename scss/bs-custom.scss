@@ -1,52 +1,89 @@
 @use "sass:color"; // 색상 모듈 사용
-// 추가적인 커스터마이징// WP Color system
 
-$primary: #008BF5;
 // 색상 변수 정의
+$primary: #0076D1;
+
 $colors: (
 	"blue": $primary,
-	"indigo": #6610f2,
-	"purple": #6f42c1,
-	"pink": #d63384,
-	"red": #EC1721,
+	"indigo": #5652f0,
+	"purple": #952CF2,
+	"pink": #F748AD,
+	"red": #DF134C,
 	"orange": #fd7e14,
 	"yellow": #ffc107,
-	"green": #00a662,
-	"teal": #0099cc,
-	"cyan": #0dcaf0,
+	"green": #00A662,
+	"teal": #0099CC,
+	"cyan": #00BBE0,
 	"gray": #6E7687
 );
 
-// 명도 단계 정의 (100부터 900까지)
-$steps: (
-	100: 40%,
-	// 가장 밝음
-	200: 30%,
-	300: 20%,
-	400: 10%,
-	500: 0%,
-	// 기본색과 비슷
-	600: -10%,
-	700: -18%,
-	800: -26%,
-	900: -36% // 가장 어두움
+// 색상별 명도 단계 정의 (각각의 색상에 맞춰 다른 비율 적용)
+$lightness-steps: (
+	"blue": (100: (lightness: 48%, saturation: 0%),
+		200: (lightness: 40%, saturation: 0%),
+		300: (lightness: 30%, saturation: 0%),
+		400: (lightness: 16%, saturation: 0%),
+		500: (lightness: 0%, saturation: 0%),
+		600: (lightness: -8%, saturation: 0%),
+		700: (lightness: -18%, saturation: 0%),
+		800: (lightness: -28%, saturation: 0%),
+		900: (lightness: -38%, saturation: 0%)),
+	"indigo": (100: (lightness: 30%, saturation: 0%),
+		200: (lightness: 24%, saturation: 0%),
+		300: (lightness: 16%, saturation: 0%),
+		400: (lightness: 10%, saturation: 0%),
+		500: (lightness: 0%, saturation: 0%),
+		600: (lightness: -8%, saturation: -5%),
+		700: (lightness: -16%, saturation: -10%),
+		800: (lightness: -24%, saturation: -15%),
+		900: (lightness: -32%, saturation: -20%)),
+	"purple": (100: (lightness: 38%, saturation: 0%),
+		200: (lightness: 32%, saturation: 0%),
+		300: (lightness: 24%, saturation: 0%),
+		400: (lightness: 16%, saturation: 0%),
+		500: (lightness: 0%, saturation: 0%),
+		600: (lightness: -8%, saturation: -5%),
+		700: (lightness: -16%, saturation: -10%),
+		800: (lightness: -24%, saturation: -15%),
+		900: (lightness: -32%, saturation: -20%)),
+	"pink": (100: (lightness: 38%, saturation: 0%),
+		200: (lightness: 32%, saturation: 0%),
+		300: (lightness: 24%, saturation: 0%),
+		400: (lightness: 16%, saturation: 0%),
+		500: (lightness: 0%, saturation: 0%),
+		600: (lightness: -8%, saturation: -5%),
+		700: (lightness: -16%, saturation: -10%),
+		800: (lightness: -24%, saturation: -15%),
+		900: (lightness: -32%, saturation: -20%)),
+	"red": (100: (lightness: 45%, saturation: 0%),
+		200: (lightness: 40%, saturation: 0%),
+		300: (lightness: 30%, saturation: 0%),
+		400: (lightness: 20%, saturation: 0%),
+		500: (lightness: 10%, saturation: 0%),
+		600: (lightness: 0%, saturation: 0%),
+		700: (lightness: -10%, saturation: 0%),
+		800: (lightness: -20%, saturation: 0%),
+		900: (lightness: -30%, saturation: 0%))
 );
 
-// 배경 색상 클래스 생성 Mixin
-@mixin bg-color($name, $color, $modifier, $lightness) {
-	// 텍스트 색상 계산: -500부터 -900까지는 흰색, 그 외에는 검은색
-	$text-color: if($modifier >= 500, #fff, #000);
+@mixin color-variation($color-name, $lightness-key) {
+	$color: map-get($colors, $color-name);
+	$lightness-map: map-get($lightness-steps, $color-name);
+	$lightness-value: map-get($lightness-map, $lightness-key);
 
-	.bg-#{$name}-#{$modifier} {
-		background-color: adjust-color($color, $lightness: $lightness) !important;
-		color: $text-color; // 텍스트 색상 설정
-	}
-}
+	@if $color and $lightness-value {
+		@if $lightness-value > 0 {
+			// 밝은 색으로 처리
+			$final-color: lighten($color, $lightness-value);
+		} @else {
+			// 어두운 색으로 처리
+			$final-color: darken($color, abs($lightness-value));
+		}
 
-// 기본 배경 색상 클래스 생성
-@each $name, $color in $colors {
-	@each $modifier, $lightness in $steps {
-		@include bg-color($name, $color, $modifier, $lightness);
+		// 계산된 색상 반환
+		background-color: $final-color;
+	} @else {
+		@warn "명도 단계가 정의되지 않았습니다: #{$color-name} - #{$lightness-key}";
 	}
 }
 
@@ -62,6 +99,19 @@ $steps: (
 		@include color-swatch($color-value); // 해당 색상을 mixin에 전달
 	}
 }
+
+// CSS 변수 작성 Mixin
+@mixin define-rgb-variables($name, $color) {
+	--bs-#{$name}-rgb: #{red($color)}, #{green($color)}, #{blue($color)};
+}
+
+// :root에 CSS 변수 정의
+:root {
+	@each $name, $color in $colors {
+		@include define-rgb-variables($name, $color);
+	}
+}
+
 
 /* 
 // scss-docs-start theme-color-variables
@@ -95,11 +145,7 @@ $border-radius-sm: .125rem !default;
 //modal
 $modal-xxl: 1600px !default;
 
-// 새로운 간격 값만 추가
-$grid-gutter-widths: (
-	6: 3.5rem,  // g-6만 추가
-	7: 4rem  // g-7만 추가
-);
+
 
 // Bootstrap의 기본 스타일을 가져옵니다.
 @import "../node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,22 @@
+
+
+.row > [class*='col-'] > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+[class*='swatch-'] {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+/* 
+[class*='swatch-'] > span {
+	padding-left: 1rem;
+}
+[class*='swatch-'] > span::before {
+	content: ' - ';
+} 
+
+*/
