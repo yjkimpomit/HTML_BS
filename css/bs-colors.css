@@ -58,103 +58,203 @@
   color: #fff;
 }
 
+.bg-slate-50 {
+  background-color: #f5f6f8 !important;
+  color: #000;
+}
+
+.bg-slate-100 {
+  background-color: #e9ebef !important;
+  color: #000;
+}
+
+.bg-slate-200 {
+  background-color: #dde0e7 !important;
+  color: #000;
+}
+
+.bg-slate-300 {
+  background-color: #c9ced9 !important;
+  color: #000;
+}
+
+.bg-slate-400 {
+  background-color: #a5aec0 !important;
+  color: #000;
+}
+
+.bg-slate-500 {
+  background-color: #58657e !important;
+  color: #fff;
+}
+
+.bg-slate-600 {
+  background-color: #3F485A !important;
+  color: #fff;
+}
+
+.bg-slate-700 {
+  background-color: #2a303c !important;
+  color: #fff;
+}
+
+.bg-slate-800 {
+  background-color: #191d24 !important;
+  color: #fff;
+}
+
+.bg-slate-900 {
+  background-color: #080a0c !important;
+  color: #fff;
+}
+
+.bg-neutral-50 {
+  background-color: #fafafa !important;
+  color: #000;
+}
+
+.bg-neutral-100 {
+  background-color: #f0f0f0 !important;
+  color: #000;
+}
+
+.bg-neutral-200 {
+  background-color: #e1e1e1 !important;
+  color: #000;
+}
+
+.bg-neutral-300 {
+  background-color: #cccccc !important;
+  color: #000;
+}
+
+.bg-neutral-400 {
+  background-color: #ababab !important;
+  color: #000;
+}
+
+.bg-neutral-500 {
+  background-color: #646464 !important;
+  color: #fff;
+}
+
+.bg-neutral-600 {
+  background-color: #454545 !important;
+  color: #fff;
+}
+
+.bg-neutral-700 {
+  background-color: #313131 !important;
+  color: #fff;
+}
+
+.bg-neutral-800 {
+  background-color: #1c1c1c !important;
+  color: #fff;
+}
+
+.bg-neutral-900 {
+  background-color: #080808 !important;
+  color: #fff;
+}
+
 .bg-indigo-50 {
-  background-color: #f2f2fc !important;
+  background-color: #f7f5fe !important;
   color: #000;
 }
 
 .bg-indigo-100 {
-  background-color: #e2e1f7 !important;
+  background-color: #e7e3fb !important;
   color: #000;
 }
 
 .bg-indigo-200 {
-  background-color: #d2d1f3 !important;
+  background-color: #d0c8f8 !important;
   color: #000;
 }
 
 .bg-indigo-300 {
-  background-color: #bab9ed !important;
+  background-color: #b9adf4 !important;
   color: #000;
 }
 
 .bg-indigo-400 {
-  background-color: #9290e2 !important;
+  background-color: #a292f0 !important;
   color: #000;
 }
 
 .bg-indigo-500 {
-  background-color: #6360d6 !important;
+  background-color: #654be7 !important;
   color: #fff;
 }
 
 .bg-indigo-600 {
-  background-color: #322FB5 !important;
+  background-color: #3c1dd7 !important;
   color: #fff;
 }
 
 .bg-indigo-700 {
-  background-color: #252284 !important;
+  background-color: #3218b3 !important;
   color: #fff;
 }
 
 .bg-indigo-800 {
-  background-color: #171654 !important;
+  background-color: #1e0e6b !important;
   color: #fff;
 }
 
 .bg-indigo-900 {
-  background-color: #0a0923 !important;
+  background-color: #0f0735 !important;
   color: #fff;
 }
 
 .bg-purple-50 {
-  background-color: white !important;
+  background-color: #f9f2ff !important;
   color: #000;
 }
 
 .bg-purple-100 {
-  background-color: #f1e4fd !important;
+  background-color: #e6cafe !important;
   color: #000;
 }
 
 .bg-purple-200 {
-  background-color: #e3c7fb !important;
+  background-color: #d8acfe !important;
   color: #000;
 }
 
 .bg-purple-300 {
-  background-color: #d4abfa !important;
+  background-color: #ca8efd !important;
   color: #000;
 }
 
 .bg-purple-400 {
-  background-color: #b771f6 !important;
+  background-color: #a43efc !important;
   color: #000;
 }
 
 .bg-purple-500 {
-  background-color: #9f41f3 !important;
+  background-color: #9722fb !important;
   color: #fff;
 }
 
 .bg-purple-600 {
-  background-color: #8711F0 !important;
+  background-color: #7c04e4 !important;
   color: #fff;
 }
 
 .bg-purple-700 {
-  background-color: #6c0cc2 !important;
+  background-color: #6103b2 !important;
   color: #fff;
 }
 
 .bg-purple-800 {
-  background-color: #570a9b !important;
+  background-color: #4b028a !important;
   color: #fff;
 }
 
 .bg-purple-900 {
-  background-color: #410775 !important;
+  background-color: #350262 !important;
   color: #fff;
 }
 
@@ -209,52 +309,52 @@
 }
 
 .bg-red-50 {
-  background-color: #fbd3df !important;
+  background-color: #ffe6e6 !important;
   color: #000;
 }
 
 .bg-red-100 {
-  background-color: #f9b7c9 !important;
+  background-color: #ffd2d2 !important;
   color: #000;
 }
 
 .bg-red-200 {
-  background-color: #f588a6 !important;
+  background-color: #ffbdbd !important;
   color: #000;
 }
 
 .bg-red-300 {
-  background-color: #f0507c !important;
+  background-color: #ff8080 !important;
   color: #000;
 }
 
 .bg-red-400 {
-  background-color: #ec2159 !important;
+  background-color: #ff5757 !important;
   color: #000;
 }
 
 .bg-red-500 {
-  background-color: #c91144 !important;
+  background-color: #ff0606 !important;
   color: #fff;
 }
 
 .bg-red-600 {
-  background-color: #9a0d34 !important;
+  background-color: #DC0000 !important;
   color: #fff;
 }
 
 .bg-red-700 {
-  background-color: #740a27 !important;
+  background-color: #a90000 !important;
   color: #fff;
 }
 
 .bg-red-800 {
-  background-color: #4f071b !important;
+  background-color: #8a0000 !important;
   color: #fff;
 }
 
 .bg-red-900 {
-  background-color: #20030b !important;
+  background-color: #620000 !important;
   color: #fff;
 }
 
@@ -459,12 +559,12 @@
 }
 
 .bg-cyan-50 {
-  background-color: white !important;
+  background-color: #e9fbff !important;
   color: #000;
 }
 
 .bg-cyan-100 {
-  background-color: #dff9ff !important;
+  background-color: #d4f7ff !important;
   color: #000;
 }
 
@@ -514,7 +614,7 @@
 }
 
 .bg-gray-100 {
-  background-color: #fafbfb !important;
+  background-color: #f5f5f7 !important;
   color: #000;
 }
 
@@ -563,14 +663,24 @@
   background-color: #0060A9;
 }
 
+.swatch-slate {
+  color: #fff;
+  background-color: #3F485A;
+}
+
+.swatch-neutral {
+  color: #fff;
+  background-color: #454545;
+}
+
 .swatch-indigo {
   color: #fff;
-  background-color: #322FB5;
+  background-color: #3c1dd7;
 }
 
 .swatch-purple {
   color: #fff;
-  background-color: #8711F0;
+  background-color: #7c04e4;
 }
 
 .swatch-pink {
@@ -580,7 +690,7 @@
 
 .swatch-red {
   color: #fff;
-  background-color: #C91144;
+  background-color: #DC0000;
 }
 
 .swatch-orange {
@@ -615,10 +725,12 @@
 
 :root {
   --bs-blue-rgb: 0, 96, 169;
-  --bs-indigo-rgb: 50, 47, 181;
-  --bs-purple-rgb: 135, 17, 240;
+  --bs-slate-rgb: 63, 72, 90;
+  --bs-neutral-rgb: 69, 69, 69;
+  --bs-indigo-rgb: 60, 29, 215;
+  --bs-purple-rgb: 124, 4, 228;
   --bs-pink-rgb: 255, 21, 162;
-  --bs-red-rgb: 201, 17, 68;
+  --bs-red-rgb: 220, 0, 0;
   --bs-orange-rgb: 244, 112, 2;
   --bs-yellow-rgb: 223, 167, 0;
   --bs-green-rgb: 0, 120, 69;
